@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تحميل تطبيق هداية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Cairo Bold -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+
+  <script>
+    function redirectUser() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      var androidLink = "https://play.google.com/store/apps/details?id=com.hidayaksa";
+      var iosLink = "https://apps.apple.com/us/app/%D9%82%D8%B1%D8%A2%D9%86-%D9%87%D8%AF%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/id6745518467";
+
+      if (/android/i.test(userAgent)) {
+        window.location.replace(androidLink);
+      }
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.replace(iosLink);
+      }
+      else {
+        document.getElementById("buttons").style.display = "block";
+      }
+    }
+
+    window.onload = redirectUser;
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #6A0D0D; 
+      font-family: 'Cairo', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 24px;
+      background: #C9A227; 
+      color: #6A0D0D;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    #buttons {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>هداية</h1>
+    <h2>رفيقك إلى النجاة</h2>
+    <p>...جاري تحويلك لتحميل التطبيق</p>
+
+    <div id="buttons">
+      <p>:اختر المتجر المناسب</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.hidayaksa">Android</a>
+      <a class="btn" href="https://apps.apple.com/us/app/%D9%82%D8%B1%D8%A2%D9%86-%D9%87%D8%AF%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/id6745518467">iPhone</a>
+    </div>
+  </div>
+
+</body>
+</html>
